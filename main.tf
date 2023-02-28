@@ -19,11 +19,6 @@ resource "azurerm_virtual_network" "example" {
   }
 
   subnet {
-    name           = "subnet2"
-    address_prefix = "10.0.2.0/24"
-  }
-
-  subnet {
     name           = "subnet3"
     address_prefix = "10.0.3.0/24"
   }
