@@ -13,3 +13,19 @@ resource "azurerm_lb_backend_address_pool" "example" {
   loadbalancer_id = azurerm_lb.example.id
   name            = "BackEndAddressPool"
 }
+
+resource "azurerm_lb_backend_address_pool_address" "example1" {
+  name                    = "example"
+  backend_address_pool_id = azurerm_lb_backend_address_pool.example.id
+  virtual_network_id      = azurerm_virtual_network.example.id
+  ip_address              = "10.0.3.4"
+}
+
+resource "azurerm_lb_backend_address_pool_address" "example2" {
+  name                    = "example"
+  backend_address_pool_id = azurerm_lb_backend_address_pool.example.id
+  virtual_network_id      = azurerm_virtual_network.example.id
+  ip_address              = "10.0.3.5"
+}
+
+
