@@ -20,6 +20,7 @@ resource "azurerm_lb_backend_address_pool_address" "example1" {
   backend_address_pool_id = azurerm_lb_backend_address_pool.example.id
   virtual_network_id      = azurerm_virtual_network.example.id
   ip_address              = "10.0.3.4"
+  depends_on              = [azurerm_linux_virtual_machine.example]
 }
 
 resource "azurerm_lb_backend_address_pool_address" "example2" {
