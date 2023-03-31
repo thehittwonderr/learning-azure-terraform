@@ -31,4 +31,13 @@ resource "azurerm_lb_backend_address_pool_address" "example2" {
   depends_on              = [azurerm_linux_virtual_machine.example]
 }
 
+resource "azurerm_lb_rule" "example" {
+  resource_group_name            = azurerm_resource_group.rg.name
+  loadbalancer_id                = azurerm_lb.example.id
+  name                           = "AllowSSH"
+  protocol                       = "Tcp"
+  frontend_port                  = 22
+  backend_port                   = 22
+  frontend_ip_configuration_name = "PublicIPAddress"
+}
 
