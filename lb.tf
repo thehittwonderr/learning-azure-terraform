@@ -39,5 +39,6 @@ resource "azurerm_lb_rule" "example" {
   frontend_port                  = 22
   backend_port                   = 22
   frontend_ip_configuration_name = "PublicIPAddress"
+  backend_address_pool_ids       = azurerm_lb_backend_address_pool.example.id
 }
 
