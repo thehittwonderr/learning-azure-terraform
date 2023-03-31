@@ -16,5 +16,5 @@ output "tls_private_key" {
 }
 
 output "public_ip_lb" {
-  value = azurerm_public_ip.my_terraform_public_ip.id
+  value = azurerm_public_ip.my_terraform_public_ip.ip_address
 }
