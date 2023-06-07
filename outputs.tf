@@ -7,7 +7,7 @@ output "private_ip_address" {
     for name, vm in azurerm_network_interface.example : name => vm.private_ip_address
   })
 }
-  value = azurerm_network_interface.example[count.index].private_ip_address
+#value = azurerm_network_interface.example[count.index].private_ip_address
 
 
 output "tls_private_key" {
