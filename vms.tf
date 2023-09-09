@@ -4,11 +4,13 @@
 #  rsa_bits  = 4096
 #}
 #
-#resource "azurerm_key_vault_secret" "privatekey" {
-#  name         = "private-key"
-#  value        = tls_private_key.example_ssh.private_key_pem
-#  key_vault_id = azurerm_key_vault.example.id
-#}
+resource "azurerm_key_vault_secret" "privatekey" {
+  name         = "private-key"
+  value        = tls_private_key.example_ssh.private_key_pem
+  key_vault_id = azurerm_key_vault.example.id
+
+ depends_on = [azurerm_key_vault.example]
+}
 #
 ## Create public IPs
 #resource "azurerm_public_ip" "my_terraform_public_ip" {
